@@ -20,6 +20,6 @@
 
 	<bean id="ds" class="org.hsqldb.jdbc.JDBCDataSource" p:url="jdbc:hsqldb:mem:test1xml" />
 
-	<bean id="service" class="com.sopovs.moradanen.ds1xml.TransationalService" />
+	<bean id="service" class="com.sopovs.moradanen.ds1xml.TransactionalService" />
 
 </beans>

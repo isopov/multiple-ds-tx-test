@@ -9,9 +9,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@TransactionConfiguration
+@EnableTransactionManagement
 public class TestTxConfiguration {
 
 	@Bean
@@ -22,8 +23,8 @@ public class TestTxConfiguration {
 	}
 
 	@Bean
-	public ITransationalService service() {
-		return new TransationalService();
+	public ITransactionalService service() {
+		return new TransactionalService();
 	}
 
 	@Bean

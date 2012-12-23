@@ -14,13 +14,13 @@
 	<bean id="template1"
 		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"
 		c:dataSource-ref="ds1">
-		<qualifier value="hsql" />
+		<qualifier value="first" />
 	</bean>
 
 	<bean id="template2"
 		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"
 		c:dataSource-ref="ds2">
-		<qualifier value="h2" />
+		<qualifier value="second" />
 	</bean>
 
 	<bean id="transactionManager"
@@ -31,9 +31,12 @@
 		class="com.atomikos.icatch.jta.UserTransactionManager"
 		init-method="init" />
 
-	<bean id="ds1" class="org.hsqldb.jdbc.JDBCDataSource" p:url="jdbc:hsqldb:mem:test2xml" />
+    <bean id="ds1" class="com.atomikos.jdbc.AtomikosDataSourceBean" p:xaDataSource-ref="h2ds1" p:uniqueResourceName="xmlDs1"/>
+    <bean id="h2ds1" class="org.h2.jdbcx.JdbcDataSource" p:URL="jdbc:h2:mem:test2xml1;DB_CLOSE_DELAY=-1" />
 
-	<bean id="ds2" class="org.h2.jdbcx.JdbcDataSource" p:URL="jdbc:h2:mem:test2xml;DB_CLOSE_DELAY=-1" />
+
+    <bean id="ds2" class="com.atomikos.jdbc.AtomikosDataSourceBean" p:xaDataSource-ref="h2ds2" p:uniqueResourceName="xmlDs2"/>
+	<bean id="h2ds2" class="org.h2.jdbcx.JdbcDataSource" p:URL="jdbc:h2:mem:test2xml2;DB_CLOSE_DELAY=-1" />
 
 	<bean id="service" class="com.sopovs.moradanen.ds2xml.TransationalService" />
 

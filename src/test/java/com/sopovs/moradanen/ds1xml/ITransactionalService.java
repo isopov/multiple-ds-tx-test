@@ -1,7 +1,7 @@
-package com.sopovs.moradanen.ds1annotation;
+package com.sopovs.moradanen.ds1xml;
 
 
-public interface ITransationalService {
+public interface ITransactionalService {
 
 	public void setUp();
 

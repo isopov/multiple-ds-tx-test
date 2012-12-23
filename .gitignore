@@ -5,3 +5,9 @@ target
 .springBeans
 *~
 *.jar
+#Tmp files for in-memory DBs
+*.epoch
+*.log
+#Idea files
+*.iml
+.idea

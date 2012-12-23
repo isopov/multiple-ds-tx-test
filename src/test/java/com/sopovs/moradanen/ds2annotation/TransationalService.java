@@ -12,11 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class TransationalService implements ITransationalService {
 
 	@Autowired
-	@Qualifier("hsql")
+	@Qualifier("first")
 	private NamedParameterJdbcTemplate first;
 
 	@Autowired
-	@Qualifier("h2")
+	@Qualifier("second")
 	private NamedParameterJdbcTemplate second;
 
 	public void setUp() {

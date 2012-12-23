@@ -11,11 +11,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TestTxConfiguration.class)
-// TODO does not work
 public class TransactionalServiceTest {
 
 	@Autowired
-	private ITransationalService service;
+	private ITransactionalService service;
 
 	@Before
 	public void setUp() {

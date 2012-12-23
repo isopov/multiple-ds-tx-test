@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:ds2-applicationContext.xml")
-// TODO does not work (the transaction manager configuration part)
 public class TransactionalServiceTest {
 
 	@Autowired

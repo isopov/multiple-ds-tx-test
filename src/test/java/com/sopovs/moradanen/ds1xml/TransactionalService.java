@@ -1,4 +1,4 @@
-package com.sopovs.moradanen.ds1annotation;
+package com.sopovs.moradanen.ds1xml;
 
 import java.util.Collections;
 
@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-public class TransationalService implements ITransationalService {
+public class TransactionalService implements ITransactionalService {
 
 	@Autowired
 	private NamedParameterJdbcTemplate t;
