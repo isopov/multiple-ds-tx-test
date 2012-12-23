@@ -2,11 +2,15 @@ package com.sopovs.moradanen.ds2annotation;
 
 import java.util.Collections;
 
+import com.atomikos.jdbc.AtomikosDataSourceBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.sql.DataSource;
+
 
 @Transactional
 public class TransationalService implements ITransationalService {
@@ -30,6 +34,7 @@ public class TransationalService implements ITransationalService {
 	public void testTransational() {
 		first.update("insert into test1(id) values(:id)",
 				new MapSqlParameterSource("id", 1));
+        System.out.println("Action in first DS took place without taking connection from the second");
 		second.update("insert into test2 values(:id)",
 				new MapSqlParameterSource("id", 1));
 		second.update("insert into test2 values(:id)",

@@ -33,6 +33,7 @@ public class TestTxConfiguration {
 
         AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
         ds.setXaDataSource(secondDs);
+        ds.setTestQuery("SELECT 1");
         ds.setUniqueResourceName("h2DS1");
         return ds;
 	}
@@ -45,6 +46,7 @@ public class TestTxConfiguration {
 
 		AtomikosDataSourceBean ds = new AtomikosDataSourceBean();
 		ds.setXaDataSource(secondDs);
+        ds.setTestQuery("SELECT 1");
 		ds.setUniqueResourceName("h2DS2");
 		return ds;
 	}
